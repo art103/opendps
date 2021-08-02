@@ -447,15 +447,15 @@ static void ui_init(void)
 
     /** Initialise the function screens */
     uui_init(&func_ui, &g_past);
-#ifdef CONFIG_MPPT_ENABLE
-    func_mppt_init(&func_ui);
-#endif // CONFIG_MPPT_ENABLE
 #ifdef CONFIG_CCCV_ENABLE
     func_cccv_init(&func_ui);
 #endif // CONFIG_CCCV_ENABLE
 #ifdef CONFIG_FUNCGEN_ENABLE
     func_gen_init(&func_ui);
 #endif // CONFIG_FUNCGEN_ENABLE
+    #ifdef CONFIG_MPPT_ENABLE
+    func_mppt_init(&func_ui);
+#endif // CONFIG_MPPT_ENABLE
 
 
     /** Initialise the settings screens */
